@@ -1,5 +1,48 @@
-<h1>You should clap for</h1>
-<h2><%= hours %> hours and <%= minutes %> minutes</h2>
+<html>
+    <head>
+        <style>
+            #container {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                
+                align-items: center;
+                justify-content: center;
+                font-family: sans-serif;
+                text-align: center;
+            }
 
-<p>As of <%= date %>, <%= total_deaths %> people have been killed by COVID-19 in the United Kingdom.</p>
-<p>If you were to clap once in rememberance of each person, it would take you <%= hours %> hours and <%= minutes %> minutes to finish.</p>
+            main {
+                flex: 1;
+            }
+
+            footer {
+                font-size: 0.8em;
+                padding-bottom: 1em;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 4em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <main>
+                <h1>You should clap for</h1>
+                <h2><%= hours %> hours and <%= minutes %> minutes</h2>
+
+                <p>As of <%= date.strftime("%d/%m/%Y") %>, <%= delimited_number total_deaths %> people have been killed by COVID-19 in the United Kingdom.</p>
+                <p>If you were to clap once in rememberance of each person, it would take you <%= hours %> hours and <%= minutes %> minutes to finish. Remember that at the next election.</p>
+            </main>
+            <footer>
+                <p>This site was made by <a href="https://twitter.com/jellybobuk">Jon Wood</a>, and contains public sector information licensed under the Open Government Licence v3.0 from <a href="https://coronavirus.data.gov.uk/details/deaths">Public Health England</a>.</p>
+                <p>Source code is available at <a href="https://github.com/jellybob/howlongshouldiclap">github.com/jellybob/howlongshouldiclap</a>.</p>
+            </footer>
+        </div>
+    </body>
+</html>

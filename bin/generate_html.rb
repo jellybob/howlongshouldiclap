@@ -9,6 +9,10 @@ class Template
     attr_accessor :total_deaths
     attr_accessor :date
 
+    def delimited_number(number)
+        sprintf("%d", number).gsub(/(\d)(?=\d{3}+$)/, '\1,')
+    end
+
     def render
         template = File.read("index.html.erb")
         renderer = ERB.new(template)
