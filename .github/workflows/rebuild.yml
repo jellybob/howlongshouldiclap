@@ -1,0 +1,13 @@
+name: Rebuild Website
+on:
+  schedule:
+    - cron: '* */12 * * *'
+
+jobs:
+  rebuild:
+    name: Rebuild Website
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger build
+        run: 'curl -X POST -d {} https://api.netlify.com/build_hooks/601aee8523b4800a860e437b'
