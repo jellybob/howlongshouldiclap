@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+bash ./bin/download_data.sh
+ruby ./bin/generate_html.rb

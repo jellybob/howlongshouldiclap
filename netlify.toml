@@ -1,0 +1,3 @@
+[build]
+command = "./bin/build"
+publish = "dist/"
