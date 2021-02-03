@@ -2,7 +2,8 @@ name: Rebuild Website
 on:
   schedule:
     - cron: '* */12 * * *'
-
+  workflow_dispatch:
+  
 jobs:
   rebuild:
     name: Rebuild Website
